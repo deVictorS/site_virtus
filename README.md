@@ -21,7 +21,7 @@ Mesmo sem ser especialista em front-end, me propus a entender como estruturar um
 - **HTML5**  
 - **CSS3**  
 - **JS**
-- - **PHP**
+- **PHP**
 
 ---
 
