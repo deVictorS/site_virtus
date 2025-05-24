@@ -1,41 +1,39 @@
 <div align="center">
 
-# Landing Page - Projeto Pessoal
+# Landing Page – Personal Project
 
-Desenvolvido com foco em prática e aprendizado
+Developed with a focus on practice and learning
 
 </div>
 
 ---
 
-## Sobre o Projeto
+## About the Project
 
-Este é um site no formato **landing page**, desenvolvido por mim de forma autodidata como exercício de **aprendizado em desenvolvimento web**.
+This is a **landing page–style website**, self-developed as a way to practice and improve my **web development skills**.
 
-Mesmo sem ser especialista em front-end, me propus a entender como estruturar uma página moderna, responsiva e visualmente agradável.
+Although I'm not a front-end specialist, I challenged myself to understand how to structure a modern, responsive, and visually appealing page.
 
 ---
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - **HTML5**  
 - **CSS3**  
-- **JS**
+- **JavaScript**  
 - **PHP**
 
 ---
 
-## Responsividade
+## Responsiveness
 
-O layout foi planejado para se adaptar bem a diferentes tamanhos de tela (mobile, tablet e desktop), seguindo princípios básicos de **design responsivo**.
-
----
-
-## Objetivo
-
-- Praticar habilidades de **estruturação de conteúdo** e **estética visual**
-- Criar um modelo reutilizável para futuras páginas de portfólio ou projetos pessoais
+The layout was designed to adapt well to different screen sizes (mobile, tablet, and desktop), following basic principles of **responsive design**.
 
 ---
 
+## Objective
 
+- Practice skills in **content structuring** and **visual design**  
+- Create a reusable template for future portfolio pages or personal projects
+
+---
