@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $celular = htmlspecialchars($_POST['celular']);
   $mensagem = htmlspecialchars($_POST['mensagem']);
 
-  $para = "virtustecnologiadainformacao@gmail.com"; // Altere para seu e-mail real
+  $para = ""; // Altere para seu e-mail real
   $assunto = "Mensagem do site Virtus Solutions";
   $corpo = "Nome: $nome\nEmail: $email\nCelular: $celular\nMensagem:\n$mensagem";
 
