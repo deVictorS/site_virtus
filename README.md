@@ -1,6 +1,6 @@
 <div align="center">
 
-# Landing Page – Projeto Pessoal
+# Projeto Pessoal - Landing Page #
 
 </div>
 
