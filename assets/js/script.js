@@ -8,6 +8,7 @@ window.addEventListener("scroll", function () {
 
 // Menu mobile toggle
 const toggle = document.getElementById("menu-toggle");
+const closeMenu = document.getElementById("close-menu");
 const nav = document.getElementById("nav-links");
 const navLinks = document.querySelectorAll(".nav-links li a");
 
@@ -16,6 +17,12 @@ if (toggle && nav) {
     e.stopPropagation();
     nav.classList.toggle("show");
   });
+
+  if (closeMenu) {
+    closeMenu.addEventListener("click", () => {
+      nav.classList.remove("show");
+    });
+  }
 
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
@@ -40,16 +47,65 @@ document.querySelectorAll(".faq-item").forEach(item => {
 });
 
 // ==========================================================================
+// MOUSE GLOW EFFECT
+// ==========================================================================
+const glow = document.querySelector(".mouse-glow");
+window.addEventListener("mousemove", (e) => {
+  if (glow && document.body.classList.contains("dark-theme")) {
+    glow.style.setProperty("--x", e.clientX + "px");
+    glow.style.setProperty("--y", e.clientY + "px");
+  }
+});
+
+// ==========================================================================
+// CARD TILT INTERACTION
+// ==========================================================================
+document.querySelectorAll(".service-box, .contract-box").forEach(card => {
+  card.addEventListener("mousemove", (e) => {
+    const { left, top, width, height } = card.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    card.style.transform = `perspective(1000px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-8px)`;
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "perspective(1000px) rotateY(0) rotateX(0) translateY(0)";
+  });
+});
+
+// ==========================================================================
+// REVEAL ANIMATIONS ON SCROLL
+// ==========================================================================
+const reveal = () => {
+  const reveals = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+};
+
+document.addEventListener("DOMContentLoaded", reveal);
+
+// ==========================================================================
 // LÓGICA DE TROCA DE TEMA (LIGHT/DARK MODE)
 // ==========================================================================
 const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 const themeIcon = themeToggle.querySelector("i");
 
-const currentTheme = localStorage.getItem("theme");
+// Default to dark theme for "Tech-Noir" look
+const currentTheme = localStorage.getItem("theme") || "dark";
 if (currentTheme === "dark") {
   body.classList.add("dark-theme");
   themeIcon.classList.replace("fa-moon", "fa-sun");
+} else {
+  body.classList.remove("dark-theme");
+  themeIcon.classList.replace("fa-sun", "fa-moon");
 }
 
 themeToggle.addEventListener("click", () => {
@@ -135,7 +191,7 @@ const langSwitch = document.getElementById("lang-switch");
 
 function updateLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach(element => {
-    const key = element.getAttribute("data-i18n");
+    const key = element.dataset.i18n;
     if (translations[lang][key]) {
       element.textContent = translations[lang][key];
     }
