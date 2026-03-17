@@ -1,1 +1,0 @@
-nav.classList.toggle("show");

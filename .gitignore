@@ -1,0 +1,30 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment and Secrets
+.env
+.env.local
+.env.*.local
+*.log
+
+# Dependencies
+node_modules/
+bower_components/
+vendor/
+composer.lock
+composer.phar
+
+# Build and temporary files
+dist/
+build/
+.cache/
+.tmp/

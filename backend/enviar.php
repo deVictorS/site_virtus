@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $cabecalhos .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
   if (mail($para, $assunto, $corpo, $cabecalhos)) {
-    header("Location: obrigado.html");
+    header("Location: ../obrigado.html");
     exit();
   } else {
     echo "Erro ao enviar. Tente novamente mais tarde.";
