@@ -576,17 +576,40 @@ footer {
 /* ==========================================================================
    RESPONSIVIDADE
    ========================================================================== */
+@media (max-width: 1024px) {
+  .container {
+    width: 88%;
+    padding: 50px 0;
+  }
+
+  .nav-links { gap: 20px; }
+  .nav-links li a { font-size: 0.75rem; }
+
+  .services-grid, .contracts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 992px) {
   .nav-links { gap: 15px; }
-  .nav-links li a { font-size: 0.75rem; }
 }
 
 @media (max-width: 768px) {
-  .navbar { padding: 12px 5%; }
+  .navbar { 
+    padding: 12px 5%; 
+    justify-content: center; /* Centraliza o conteúdo (logo) */
+  }
   
+  .logo {
+    position: relative;
+    z-index: 1001;
+  }
+
   .menu-toggle { 
     display: block; 
     color: #fff;
+    position: absolute;
+    right: 5%; /* Mantém o toggle na direita */
   }
   
   .navbar.fixed .menu-toggle { color: var(--text-main); }
@@ -595,7 +618,7 @@ footer {
     position: fixed;
     top: 0; right: -100%;
     width: 100%; 
-    max-width: 300px;
+    max-width: 320px; /* Um pouco maior para tablets em modo retrato */
     height: 100vh;
     background: var(--bg-card);
     flex-direction: column;
@@ -605,12 +628,16 @@ footer {
     box-shadow: -10px 0 30px rgba(0,0,0,0.2);
     z-index: 1050;
   }
+
+  .services-grid, .contracts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
   
   .nav-links.show { right: 0; }
   
   .nav-links li a { 
     color: var(--text-main); 
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
   }
   
@@ -629,8 +656,8 @@ footer {
   }
 
   .partners-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas em tablets */
+    gap: 20px;
   }
 
   .partner-logo { height: 50px; }
@@ -639,7 +666,15 @@ footer {
 @media (max-width: 480px) {
   .hero h1 { line-height: 1.2; }
   
+  .services-grid, .contracts-grid {
+    grid-template-columns: 1fr;
+  }
+
   .service-box, .contract-box {
     padding: 30px 20px;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
