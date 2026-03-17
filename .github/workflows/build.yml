@@ -1,4 +1,5 @@
 # esse workflow é acionado quando há um push para a branch main ou quando um pull request é aberto, sincronizado ou reaberto
+# ele executa uma análise de código usando o SonarQube, que é uma ferramenta de análise de código estático
 name: Build
 on:
   push:
