@@ -21,7 +21,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=deVictorS_novo_site
+            -Dsonar.projectKey=deVictorS_site_virtus
             -Dsonar.organization=devictors
             -Dsonar.sources=.
             -Dsonar.host.url=https://sonarcloud.io
