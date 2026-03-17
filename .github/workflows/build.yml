@@ -1,3 +1,4 @@
+# esse workflow é acionado quando há um push para a branch main ou quando um pull request é aberto, sincronizado ou reaberto
 name: Build
 on:
   push:
