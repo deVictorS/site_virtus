@@ -1,16 +1,14 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $nome = htmlspecialchars($_POST['nome']);
-  $email = htmlspecialchars($_POST['email']);
   $celular = htmlspecialchars($_POST['celular']);
-  $mensagem = htmlspecialchars($_POST['mensagem']);
 
   $para = ""; // Altere para seu e-mail real
-  $assunto = "Mensagem do site Virtus Solutions";
-  $corpo = "Nome: $nome\nEmail: $email\nCelular: $celular\nMensagem:\n$mensagem";
+  $assunto = "Nova Solicitação de Contato - Virtus Solutions";
+  $corpo = "Nome: $nome\nCelular: $celular";
 
-  $cabecalhos = "From: $email\r\n";
-  $cabecalhos .= "Reply-To: $email\r\n";
+  // Como não há mais o campo e-mail, usamos um remetente genérico ou fixo.
+  $cabecalhos = "From: no-reply@virtussolutions.com.br\r\n";
   $cabecalhos .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
   if (mail($para, $assunto, $corpo, $cabecalhos)) {
