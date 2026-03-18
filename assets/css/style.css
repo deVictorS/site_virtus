@@ -583,10 +583,19 @@ footer {
 
 @media (max-width: 768px) {
   .navbar { padding: 12px 5%; }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
   
   .menu-toggle { 
     display: block; 
     color: #fff;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
   }
   
   .navbar.fixed .menu-toggle { color: var(--text-main); }
