@@ -1,8 +1,16 @@
-// Script para a navbar fixa e botão WhatsApp ao rolar a página
+// Script para a navbar fixa, botão WhatsApp e barra de progresso ao rolar a página
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
   const whatsapp = document.querySelector(".whatsapp-fixed");
+  const progressBar = document.querySelector(".scroll-progress");
   
+  // Barra de progresso
+  const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (window.scrollY / windowHeight) * 100;
+  if (progressBar) {
+    progressBar.style.width = scrolled + "%";
+  }
+
   if (navbar) {
     navbar.classList.toggle("fixed", window.scrollY > 50);
   }

@@ -33,6 +33,32 @@ body.dark-theme {
 body.dark-theme .partner-logo img {
   opacity: 1;
 }
+
+/* ==========================================================================
+   ANIMAÇÕES DE SCROLL & REVEAL
+   ========================================================================== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--accent);
+  z-index: 2100;
+  transition: width 0.1s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 * {
   margin: 0;
   padding: 0;
