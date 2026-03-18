@@ -59,9 +59,29 @@ resource "aws_acm_certificate_validation" "cert" {
 # FRONT-END (S3 + CloudFront + OAC)
 # --------------------------------------------------------------------------
 
+# S3 Bucket para Logs de Auditoria
+resource "aws_s3_bucket" "logs" {
+  bucket = "${var.project_name}-infra-logs"
+}
+
+resource "aws_s3_bucket_public_access_block" "logs" {
+  bucket = aws_s3_bucket.logs.id
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
 # S3 Bucket Privado para o Frontend Estático
 resource "aws_s3_bucket" "frontend" {
   bucket = "${var.project_name}-static-content"
+}
+
+resource "aws_s3_bucket_logging" "frontend_logging" {
+  bucket = aws_s3_bucket.frontend.id
+
+  target_bucket = aws_s3_bucket.logs.id
+  target_prefix = "s3-access-logs/"
 }
 
 # Bloqueio de acesso público explícito
@@ -95,6 +115,12 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   is_ipv6_enabled     = true
   default_root_object = "index.html"
   aliases             = [var.domain_name]
+
+  logging_config {
+    include_cookies = false
+    bucket          = aws_s3_bucket.logs.bucket_domain_name
+    prefix          = "cloudfront-logs/"
+  }
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]

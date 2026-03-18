@@ -7,7 +7,7 @@
   --bg-alt: #f4f7f9;
   --bg-card: #ffffff;
   --text-main: #2d3748;
-  --text-muted: #4a5568;
+  --text-muted: #3d4852;
   --text-white: #ffffff;
   --accent: #007BFF;
   --accent-hover: #0056b3;
@@ -23,7 +23,7 @@ body.dark-theme {
   --bg-alt: #16191d;
   --bg-card: #1a1d21;
   --text-main: #e2e8f0;
-  --text-muted: #a0aec0;
+  --text-muted: #cbd5e0;
   --border: rgba(255, 255, 255, 0.05);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   --navbar-bg: rgba(15, 17, 19, 0.95);
@@ -574,6 +574,11 @@ transform: scale(1.05);
   color: #fff;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   opacity: 1;
+}
+
+.whatsapp-fixed i {
+  color: #fff !important;
+  font-size: inherit;
 }
 
 @media (max-width: 768px) {
