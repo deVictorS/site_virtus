@@ -1,8 +1,15 @@
-// Script para a navbar fixa ao rolar a página
+// Script para a navbar fixa e botão WhatsApp ao rolar a página
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
+  const whatsapp = document.querySelector(".whatsapp-fixed");
+  
   if (navbar) {
     navbar.classList.toggle("fixed", window.scrollY > 50);
+  }
+  
+  if (whatsapp) {
+    // Mostra o botão após rolar 300px
+    whatsapp.classList.toggle("show", window.scrollY > 300);
   }
 });
 

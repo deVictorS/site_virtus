@@ -556,8 +556,54 @@ body.dark-theme .faq-answer {
 .partner-logo.logo-xl img { max-height: 75px; }
 
 .partner-logo:hover img {
+opacity: 1;
+transform: scale(1.05);
+}
+
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2000;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+}
+
+.whatsapp-fixed.show {
+  opacity: 0.6;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.whatsapp-fixed:hover {
+  transform: scale(1.1) rotate(5deg);
+  background-color: #20b358;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   opacity: 1;
-  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+.whatsapp-fixed {
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+}
 }
 
 /* Seletor de Idioma */
