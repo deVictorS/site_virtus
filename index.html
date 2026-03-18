@@ -226,7 +226,8 @@
       <div class="container">
         <h2 data-i18n="contact-title"><i class="fas fa-envelope-open-text"></i> Vamos Transformar seu Negócio?</h2>
         <p style="text-align: center; margin-bottom: 30px;" data-i18n="contact-subtitle">Fale com um especialista e receba uma análise inicial da sua infraestrutura.</p>
-        <form action="/backend/enviar" method="POST">
+        <!-- IMPORTANTE: Substitua a URL abaixo pelo valor de 'api_endpoint_url' do seu Terraform -->
+        <form action="COLOQUE_AQUI_A_URL_DO_API_GATEWAY/enviar" method="POST">
           <input type="text" name="nome" placeholder="Seu nome" required />
           <input type="tel" name="celular" placeholder="WhatsApp" required />
           <button type="submit" data-i18n="contact-btn">Quero um Diagnóstico Gratuito</button>

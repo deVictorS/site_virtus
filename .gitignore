@@ -1,33 +1,75 @@
-# OS files
+# --- SISTEMA OPERACIONAL ---
 .DS_Store
 Thumbs.db
 *.swp
 desktop.ini
 
-# IDEs and Editors
+# --- IDEs E EDITORES ---
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
+.project
+.settings/
 
-# Environment and Secrets
+# --- AMBIENTE E SEGREDOS (CRÍTICO) ---
 .env
 .env.local
 .env.*.local
 *.log
+keys/
+secrets.tfvars
+credentials.json
+*.pem
+*.key
 
-# Dependencies
-node_modules/
-bower_components/
-vendor/
-composer.lock
-composer.phar
+# --- TERRAFORM ---
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+*.tfvars.json
+.terraform.lock.hcl
+*.tfplan
 
-# Build and temporary files
-dist/
+# --- PYTHON ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env/
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+manifest
+spec
+
+# --- BACKEND API (AWS LAMBDA) ---
+# Ignorar o payload gerado pelo Terraform
+infra/api/api_payload.zip
+# Ignorar a pasta de pacotes temporários
+infra/api/package/
+# IGNORAR ABSOLUTAMENTE TODAS AS PASTAS DE DEPENDÊNCIAS
+# Isso garante que apenas o main.py e o requirements.txt subam para o Git
+infra/api/*/
+
+# --- WEB / FRONTEND ---
+node_modules/
 .cache/
 .tmp/
-
-# Scripts
-script/
+dist/
