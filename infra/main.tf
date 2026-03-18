@@ -64,6 +64,16 @@ resource "aws_s3_bucket" "frontend" {
   bucket = "${var.project_name}-static-content"
 }
 
+# Bloqueio de acesso público explícito
+resource "aws_s3_bucket_public_access_block" "frontend" {
+  bucket = aws_s3_bucket.frontend.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
 # Origin Access Control (OAC) para o CloudFront
 resource "aws_cloudfront_origin_access_control" "default" {
   name                              = "${var.project_name}-oac"
@@ -115,19 +125,33 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   tags = { Name = "${var.project_name}-cloudfront" }
 }
 
-# Política do S3 para permitir apenas o CloudFront (via OAC)
+# Política do S3 para permitir apenas o CloudFront (via OAC) e forçar HTTPS
 resource "aws_s3_bucket_policy" "allow_cloudfront" {
   bucket = aws_s3_bucket.frontend.id
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
-        Action   = "s3:GetObject"
-        Effect   = "Allow"
-        Resource = "${aws_s3_bucket.frontend.arn}/*"
+        Sid       = "AllowCloudFrontServicePrincipal"
+        Action    = "s3:GetObject"
+        Effect    = "Allow"
+        Resource  = "${aws_s3_bucket.frontend.arn}/*"
         Principal = { Service = "cloudfront.amazonaws.com" }
         Condition = {
           StringEquals = { "AWS:SourceArn" = aws_cloudfront_distribution.s3_distribution.arn }
+        }
+      },
+      {
+        Sid       = "EnforceHTTPS"
+        Action    = "s3:*"
+        Effect    = "Deny"
+        Resource  = [
+          aws_s3_bucket.frontend.arn,
+          "${aws_s3_bucket.frontend.arn}/*"
+        ]
+        Principal = "*"
+        Condition = {
+          Bool = { "aws:SecureTransport" = "false" }
         }
       }
     ]

@@ -38,7 +38,7 @@ async def enviar_contato(
                 }
             }
         )
-        print(f"E-mail enviado com sucesso!")
+        print("E-mail enviado com sucesso!")
     except Exception as e:
         # Log do erro para depuração no CloudWatch
         print(f"Erro ao enviar e-mail via SES: {str(e)}")

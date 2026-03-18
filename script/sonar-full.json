@@ -1,0 +1,177 @@
+{
+  "issues": [
+    {
+      "key": "AZ0BoMVCCnhMgAnKUS56",
+      "rule": "python:S3457",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Add replacement fields or use a normal string instead of an f-string.",
+      "component": "deVictorS_site_virtus:infra/api/main.py",
+      "line": 41
+    },
+    {
+      "key": "AZ0AgbZP6BZSWFp2_WfM",
+      "rule": "css:S4666",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Unexpected duplicate selector \".faq-item\", first used at line 353",
+      "component": "deVictorS_site_virtus:assets/css/style.css",
+      "line": 499
+    },
+    {
+      "key": "AZ0AgbZP6BZSWFp2_WfN",
+      "rule": "css:S4666",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Unexpected duplicate selector \".faq-question\", first used at line 362",
+      "component": "deVictorS_site_virtus:assets/css/style.css",
+      "line": 509
+    },
+    {
+      "key": "AZ0AgbZP6BZSWFp2_WfO",
+      "rule": "css:S4666",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Unexpected duplicate selector \".faq-answer\", first used at line 372",
+      "component": "deVictorS_site_virtus:assets/css/style.css",
+      "line": 523
+    },
+    {
+      "key": "AZ0AgbZP6BZSWFp2_WfP",
+      "rule": "css:S4666",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Unexpected duplicate selector \".faq-item.active .faq-answer\", first used at line 385",
+      "component": "deVictorS_site_virtus:assets/css/style.css",
+      "line": 541
+    },
+    {
+      "key": "AZ0AgbZP6BZSWFp2_WfK",
+      "rule": "css:S7924",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Text does not meet the minimal contrast requirement with its background.",
+      "component": "deVictorS_site_virtus:assets/css/style.css",
+      "line": 594
+    },
+    {
+      "key": "AZ0AgbZP6BZSWFp2_WfL",
+      "rule": "css:S7924",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Text does not meet the minimal contrast requirement with its background.",
+      "component": "deVictorS_site_virtus:assets/css/style.css",
+      "line": 620
+    },
+    {
+      "key": "AZ0Agbb56BZSWFp2_WfR",
+      "rule": "Web:S5255",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Add an \"aria-label\" or \"aria-labbelledby\" attribute to this element.",
+      "component": "deVictorS_site_virtus:index.html",
+      "line": 21
+    },
+    {
+      "key": "AZ0Agbb56BZSWFp2_WfS",
+      "rule": "Web:S5255",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "message": "Add an \"aria-label\" or \"aria-labbelledby\" attribute to this element.",
+      "component": "deVictorS_site_virtus:index.html",
+      "line": 266
+    }
+  ],
+  "hotspots": [
+    {
+      "key": "AZ0BoMXYCnhMgAnKUS58",
+      "component": "deVictorS_site_virtus:infra/main.tf",
+      "securityCategory": "permission",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 63,
+      "message": "No Public Access Block configuration prevents public ACL/policies to be set on this S3 bucket. Make sure it is safe here."
+    },
+    {
+      "key": "AZ0BoMXYCnhMgAnKUS6A",
+      "component": "deVictorS_site_virtus:infra/main.tf",
+      "securityCategory": "permission",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 233,
+      "message": "Make sure creating a public API is safe here."
+    },
+    {
+      "key": "AZ0BoMXYCnhMgAnKUS5_",
+      "component": "deVictorS_site_virtus:infra/main.tf",
+      "securityCategory": "permission",
+      "vulnerabilityProbability": "MEDIUM",
+      "status": "TO_REVIEW",
+      "line": 191,
+      "message": "Make sure granting access to all resources is safe here."
+    },
+    {
+      "key": "AZ0BoMXYCnhMgAnKUS57",
+      "component": "deVictorS_site_virtus:infra/main.tf",
+      "securityCategory": "encrypt-data",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 63,
+      "message": "No bucket policy enforces HTTPS-only access to this bucket. Make sure it is safe here."
+    },
+    {
+      "key": "AZz8eTJEZnSIgCtEtq-W",
+      "component": "deVictorS_site_virtus:.github/workflows/build.yml",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 21,
+      "message": "Use full commit SHA hash for this dependency."
+    },
+    {
+      "key": "AZz8eTI6ZnSIgCtEtq-T",
+      "component": "deVictorS_site_virtus:index.html",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 10,
+      "message": "Make sure not using resource integrity feature is safe here."
+    },
+    {
+      "key": "AZz9Gv1mAYReTk2gObWI",
+      "component": "deVictorS_site_virtus:obrigado.html",
+      "securityCategory": "others",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 10,
+      "message": "Make sure not using resource integrity feature is safe here."
+    },
+    {
+      "key": "AZ0BoMXYCnhMgAnKUS59",
+      "component": "deVictorS_site_virtus:infra/main.tf",
+      "securityCategory": "traceability",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 63,
+      "message": "Omitting \"logging\" or acl=\"log-delivery-write\" makes logs incomplete. Make sure it is safe here."
+    },
+    {
+      "key": "AZ0BoMXYCnhMgAnKUS5-",
+      "component": "deVictorS_site_virtus:infra/main.tf",
+      "securityCategory": "traceability",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 77,
+      "message": "Omitting \"logging_config\" makes logs incomplete. Make sure it is safe here."
+    },
+    {
+      "key": "AZ0BoMXYCnhMgAnKUS6B",
+      "component": "deVictorS_site_virtus:infra/main.tf",
+      "securityCategory": "traceability",
+      "vulnerabilityProbability": "LOW",
+      "status": "TO_REVIEW",
+      "line": 240,
+      "message": "Omitting \"access_log_settings\" makes logs incomplete. Make sure it is safe here."
+    }
+  ]
+}
