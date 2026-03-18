@@ -8,7 +8,6 @@ window.addEventListener("scroll", function () {
   }
   
   if (whatsapp) {
-    // Mostra o botão após rolar 300px
     whatsapp.classList.toggle("show", window.scrollY > 300);
   }
 });
@@ -67,7 +66,7 @@ window.addEventListener("mousemove", (e) => {
 // ==========================================================================
 // CARD TILT INTERACTION
 // ==========================================================================
-document.querySelectorAll(".service-box, .contract-box").forEach(card => {
+document.querySelectorAll(".service-box, .contract-box, .diff-item").forEach(card => {
   card.addEventListener("mousemove", (e) => {
     const { left, top, width, height } = card.getBoundingClientRect();
     const x = (e.clientX - left) / width - 0.5;
@@ -105,7 +104,6 @@ const themeToggle = document.getElementById("theme-toggle");
 const body = document.body;
 const themeIcon = themeToggle.querySelector("i");
 
-// Default to dark theme for "Tech-Noir" look
 const currentTheme = localStorage.getItem("theme") || "dark";
 if (currentTheme === "dark") {
   body.classList.add("dark-theme");
@@ -123,94 +121,94 @@ themeToggle.addEventListener("click", () => {
 });
 
 // ==========================================================================
-// LÓGICA DE TRADUÇÃO (PT/EN)
+// LÓGICA DE TRADUÇÃO (PT/EN) - LINGUAGEM SIMPLIFICADA PARA PMEs
 // ==========================================================================
 const translations = {
   pt: {
-    "nav-home": "Home",
+    "nav-home": "Início",
     "nav-about": "A Empresa",
-    "nav-solutions": "Soluções",
-    "nav-contracts": "Contratos",
-    "nav-impact": "Impacto",
+    "nav-solutions": "O que fazemos",
+    "nav-contracts": "Planos",
+    "nav-impact": "Resultados",
     "nav-contact": "Contato",
-    "hero-title": "Tecnologia que impulsiona resultados, não apenas resolve problemas.",
-    "hero-subtitle": "Sua empresa merece uma TI estratégica. Do suporte ágil ao desenvolvimento de software sob medida, aceleramos sua transformação digital com segurança e eficiência.",
-    "hero-btn": "Agende um Diagnóstico Estratégico",
-    "about-title": "O Futuro do seu Negócio é Tech",
-    "about-text": "A Virtus Solutions nasceu para eliminar a complexidade tecnológica das empresas. Não somos apenas um suporte; somos o braço direito da sua diretoria para decisões de tecnologia.",
-    "solutions-title": "Nosso Ecossistema de Soluções",
-    "s1-t": "Suporte 360º", "s1-d": "Help Desk e Field Service com SLAs rigorosos. Atendimento humano e ágil.",
-    "s2-t": "Fábrica de Software", "s2-d": "Desenvolvimento sob medida de sistemas e apps para automatizar processos.",
-    "s3-t": "Segurança & LGPD", "s3-d": "Proteção de dados e auditorias. Blindamos sua empresa contra ameaças.",
-    "s4-t": "Cloud & Transformação", "s4-d": "Migração para nuvem e gestão de servidores para ganhar escalabilidade.",
-    "s5-t": "Redes & Infra", "s5-d": "Projetos de conectividade e Wi-Fi corporativo de alta performance.",
-    "s6-t": "Consultoria em TI", "s6-d": "Gestão estratégica (vCIO) e planejamento focado em ROI.",
-    "contracts-title": "Modelos de Parceria",
-    "c1-t": "Sob Demanda (Spot)", "c1-d": "Ideal para projetos pontuais ou resoluções de problemas emergenciais.",
-    "c2-t": "Suporte Mensal", "c2-d": "Contratos de suporte contínuo com SLAs e redução de custos fixos.",
-    "c3-t": "Full TI Outsourcing", "c3-d": "Terceirização completa. Sua empresa foca no negócio, nós na tecnologia.",
-    "impact-title": "O Valor Real da TI Estratégica",
-    "i1-l": "Redução de Custos", "i1-t": "Economia de até 19%", "i1-d": "Terceirização estratégica reduz custos operacionais significativamente.",
-    "i2-l": "Cibersegurança", "i2-t": "R$ 6,4 Milhões por Incidente", "i2-d": "Este é o custo médio de um vazamento de dados no Brasil.",
-    "i3-l": "Produtividade", "i3-t": "Ganho de 62% em Eficiência", "i3-d": "Cloud e automação permitem foco total no core business.",
-    "diff-title": "Por que a Virtus?",
-    "d1-t": "Previsibilidade de Custos", "d1-d": "Elimine gastos surpresas com TI. Nossos modelos de contrato permitem um planejamento financeiro preciso para PMEs.",
-    "d2-t": "Time de Especialistas", "d2-d": "Tenha acesso a uma equipe multidisciplinar (vCIO, Segurança, Cloud) sem o custo de manter um departamento interno.",
-    "d3-t": "Agilidade de Resposta", "d3-d": "Sabemos que para uma PME, cada minuto parado é prejuízo. Nosso suporte é focado em resolução rápida e proativa.",
-    "d4-t": "Segurança Corporativa", "d4-d": "Levamos o nível de segurança de grandes corporações para o seu negócio, protegendo seus dados contra ataques modernos.",
+    "hero-title": "Sua Empresa Livre de Problemas com Tecnologia.",
+    "hero-subtitle": "Cuidamos de tudo: da sua internet ao sistema que sua empresa usa. TI organizada, rápida e com preço justo para o seu negócio crescer sem interrupções.",
+    "hero-btn": "Quero um Diagnóstico Grátis",
+    "about-title": "O braço direito que sua empresa precisa",
+    "about-text": "A Virtus é o time de especialistas que cuida da tecnologia da sua empresa para você focar no que realmente importa: vender e crescer. Resolvemos desde problemas de internet lenta até a criação de sistemas modernos para facilitar seu dia a dia.",
+    "solutions-title": "Soluções Simples e Eficientes",
+    "s1-t": "Internet & Redes", "s1-d": "Sua internet sempre rápida e funcionando em todos os computadores. Wi-Fi de qualidade para você e seus clientes.",
+    "s2-t": "Sistemas & Aplicativos", "s2-d": "Criamos ferramentas exclusivas para automatizar tarefas repetitivas e organizar os dados da sua empresa.",
+    "s3-t": "Proteção Digital", "s3-d": "Protegemos seus computadores contra vírus e invasões. Seus dados e o dinheiro da sua empresa sempre seguros.",
+    "s4-t": "Arquivos na Nuvem", "s4-d": "Acesse seus documentos de qualquer lugar com total segurança, sem precisar de servidores caros no escritório.",
+    "s5-t": "Suporte Rápido", "s5-d": "Atendimento humano e sem demora. Teve um problema técnico? Nossa equipe resolve na hora, sem complicação.",
+    "s6-t": "Consultoria e Gestão", "s6-d": "Ajudamos você a escolher as melhores tecnologias para economizar dinheiro e organizar seu negócio.",
+    "contracts-title": "Como trabalhamos",
+    "c1-t": "Serviços Avulsos", "c1-d": "Ideal para resolver um problema específico ou instalar algo novo na sua empresa.",
+    "c2-t": "Mensalidade de Suporte", "c2-d": "Um valor fixo por mês para ter nossa equipe cuidando de tudo, com manutenção e socorro imediato.",
+    "c3-t": "Gestão Total", "c3-d": "Nós assumimos toda a responsabilidade tecnológica. Você não se preocupa com nada de TI.",
+    "impact-title": "Impacto no seu Bolso",
+    "i1-l": "Economia", "i1-t": "Redução de Gastos em até 25%", "i1-d": "Eliminamos desperdícios com equipamentos errados e manutenções desnecessárias.",
+    "i2-l": "Segurança", "i2-t": "99.9% de Estabilidade", "i2-d": "Trabalhamos para que seus computadores e sistemas nunca parem de funcionar.",
+    "i3-l": "Tempo", "i3-t": "Soluções em Minutos", "i3-d": "Nossa rapidez garante que seus funcionários não fiquem parados esperando a TI resolver.",
+    "diff-title": "Por que escolher a Virtus?",
+    "d1-t": "Preço Justo", "d1-d": "Soluções profissionais com valores que cabem no orçamento de uma pequena ou média empresa.",
+    "d2-t": "Tudo Organizado", "d2-d": "Você recebe relatórios claros e sabe exatamente o que está sendo feito, sem palavras difíceis.",
+    "d3-t": "Sem Burocracia", "d3-d": "Entendemos a pressa do dono de empresa. Atendimento direto ao ponto e resolução rápida.",
+    "d4-t": "Modernidade", "d4-d": "Usamos o que há de mais novo para deixar sua empresa moderna e competitiva no mercado.",
     "faq-title": "Dúvidas Frequentes",
-    "q1-t": "Minha empresa é pequena. Realmente preciso de Outsourcing?", "q1-a": "Sim! Justamente por ser pequena, você não pode desperdiçar tempo com falhas técnicas. Oferecemos tecnologia de ponta com custo reduzido.",
-    "q2-t": "Qual o tempo de resposta em caso de problemas?", "q2-a": "Trabalhamos com SLAs rigorosos. Para problemas críticos, o suporte inicia em poucos minutos de forma remota ou presencial.",
-    "q3-t": "Meus dados estarão seguros com vocês?", "q3-a": "A segurança é nosso pilar. Utilizamos criptografia, backups redundantes e monitoramento 24/7 para proteger seu negócio.",
-    "q4-t": "Como funciona o contrato? Tem fidelidade?", "q4-a": "Temos modelos flexíveis. Nossos contratos mensais buscam parceria de longo prazo, mas sempre prezamos pela transparência.",
-    "contact-title": "Vamos Transformar seu Negócio?",
-    "contact-subtitle": "Fale com um especialista e receba uma análise inicial.",
-    "contact-btn": "Solicitar Contato de Especialista",
-    "tech-title": "Ecossistema Tecnológico",
-    "footer-tag": "Estratégia em Tecnologia da Informação."
+    "q1-t": "Vou economizar dinheiro contratando vocês?", "q1-a": "Sim. Organizamos sua TI para evitar gastos extras com quebras de equipamentos e perda de tempo da sua equipe.",
+    "q2-t": "Atendem empresas de qualquer ramo?", "q2-a": "Sim! Atendemos desde escritórios e consultórios até lojas e pequenas indústrias que precisam de tecnologia estável.",
+    "q3-t": "Minha internet é lenta. Vocês resolvem?", "q3-a": "Com certeza. Fazemos uma revisão completa na sua rede para garantir que o sinal chegue forte onde você precisa.",
+    "q4-t": "O atendimento é fácil de entender?", "q4-a": "Com certeza. Falamos a sua língua e explicamos tudo de forma simples, focando em resolver o seu problema.",
+    "contact-title": "Quer deixar sua TI em boas mãos?",
+    "contact-subtitle": "Fale com a gente agora e receba uma análise gratuita da sua empresa.",
+    "contact-btn": "Quero falar com um especialista",
+    "tech-title": "Tecnologia de Ponta",
+    "footer-tag": "Cuidando da tecnologia para sua empresa crescer."
   },
   en: {
     "nav-home": "Home",
-    "nav-about": "Company",
-    "nav-solutions": "Solutions",
-    "nav-contracts": "Contracts",
-    "nav-impact": "Impact",
+    "nav-about": "About Us",
+    "nav-solutions": "What we do",
+    "nav-contracts": "Plans",
+    "nav-impact": "Results",
     "nav-contact": "Contact",
-    "hero-title": "Technology that drives results, doesn't just solve problems.",
-    "hero-subtitle": "Your company deserves strategic IT. From agile support to custom software development, we accelerate your digital transformation with security and efficiency.",
-    "hero-btn": "Schedule a Strategic Diagnosis",
-    "about-title": "Your Business Future is Tech",
-    "about-text": "Virtus Solutions was born to eliminate technological complexity for companies. We are not just support; we are your board's right hand for technology decisions.",
-    "solutions-title": "Our Solutions Ecosystem",
-    "s1-t": "360º Support", "s1-d": "Help Desk and Field Service with strict SLAs. Human and agile service.",
-    "s2-t": "Software Factory", "s2-d": "Custom development of systems and apps to automate processes.",
-    "s3-t": "Security & LGPD", "s3-d": "Data protection and audits. We shield your company against threats.",
-    "s4-t": "Cloud & Transformation", "s4-d": "Cloud migration and server management for scalability.",
-    "s5-t": "Networking & Infra", "s5-d": "Connectivity projects and high-performance corporate Wi-Fi.",
-    "s6-t": "IT Consulting", "s6-d": "Strategic management (vCIO) and ROI-focused planning.",
-    "contracts-title": "Partnership Models",
-    "c1-t": "On Demand (Spot)", "c1-d": "Ideal for specific projects or emergency problem solving.",
-    "c2-t": "Monthly Support", "c2-d": "Continuous support contracts with SLAs and fixed cost reduction.",
-    "c3-t": "Full IT Outsourcing", "c3-d": "Complete outsourcing. Your company focuses on business, we focus on tech.",
-    "impact-title": "The Real Value of Strategic IT",
-    "i1-l": "Cost Reduction", "i1-t": "Up to 19% Savings", "i1-d": "Strategic outsourcing significantly reduces global operating costs.",
-    "i2-l": "Cybersecurity", "i2-t": "$1.2M per Incident", "i2-d": "Average cost of a data breach. Proactive prevention reduces this risk.",
-    "i3-l": "Productivity", "i3-t": "62% Efficiency Gain", "i3-d": "Cloud and automation allow full focus on core business.",
-    "diff-title": "Why Virtus?",
-    "d1-t": "Cost Predictability", "d1-d": "Eliminate IT surprise expenses. Our contract models allow precise financial planning for SMEs.",
-    "d2-t": "Expert Team", "d2-d": "Access a multidisciplinary team (vCIO, Security, Cloud) without the cost of an in-house department.",
-    "d3-t": "Response Agility", "d3-d": "We know that for an SME, every minute down is a loss. Our support focuses on fast, proactive resolution.",
-    "d4-t": "Enterprise Security", "d4-d": "We bring enterprise-level security to your business, protecting your data against modern attacks.",
+    "hero-title": "Your Business Free from Tech Headaches.",
+    "hero-subtitle": "We handle everything: from your internet to the systems your company uses. Organized, fast, and fairly priced IT for your business to grow smoothly.",
+    "hero-btn": "Get a Free Diagnosis",
+    "about-title": "The right hand your business needs",
+    "about-text": "Virtus is the expert team that handles your company's tech so you can focus on what matters: selling and growing. We solve everything from slow internet to creating modern systems to simplify your day.",
+    "solutions-title": "Simple & Efficient Solutions",
+    "s1-t": "Internet & Networks", "s1-d": "Your internet always fast and working on every computer. Quality Wi-Fi for you and your clients.",
+    "s2-t": "Systems & Apps", "s2-d": "We create exclusive tools to automate repetitive tasks and organize your company data.",
+    "s3-t": "Digital Protection", "s3-d": "We protect your computers against viruses and hacking. Your data and money always safe.",
+    "s4-t": "Cloud Files", "s4-d": "Access your documents from anywhere with total security, without needing expensive office servers.",
+    "s5-t": "Fast Support", "s5-d": "Human and prompt service. Got a tech problem? Our team solves it right away, no complications.",
+    "s6-t": "Management & Consulting", "s6-d": "We help you choose the best technology to save money and organize your business.",
+    "contracts-title": "How we work",
+    "c1-t": "One-off Services", "c1-d": "Ideal for solving a specific problem or installing something new.",
+    "c2-t": "Monthly Support", "c2-d": "A fixed monthly fee to have our team handling everything, with maintenance and immediate help.",
+    "c3-t": "Total Management", "c3-d": "We take full responsibility for your tech. You don't have to worry about anything IT-related.",
+    "impact-title": "Impact on Your Budget",
+    "i1-l": "Savings", "i1-t": "Up to 25% Cost Reduction", "i1-d": "We eliminate waste on wrong equipment and unnecessary maintenance.",
+    "i2-l": "Stability", "i2-t": "99.9% Reliability", "i2-d": "We work so your computers and systems never stop working.",
+    "i3-l": "Time", "i3-t": "Solutions in Minutes", "i3-d": "Our speed ensures your staff doesn't sit idle waiting for IT to fix things.",
+    "diff-title": "Why choose Virtus?",
+    "d1-t": "Fair Pricing", "d1-d": "Professional solutions with values that fit the budget of small and medium-sized businesses.",
+    "d2-t": "Fully Organized", "d2-d": "You get clear reports and know exactly what's being done, without the jargon.",
+    "d3-t": "No Bureaucracy", "d3-d": "We understand business owners' urgency. Straightforward service and fast resolution.",
+    "d4-t": "Modernity", "d4-d": "We use the latest tech to keep your business modern and competitive.",
     "faq-title": "Frequently Asked Questions",
-    "q1-t": "My company is small. Do I really need Outsourcing?", "q1-a": "Yes! Especially because you're small, you can't afford technical downtime. We offer top-tier technology at a reduced cost.",
-    "q2-t": "What is the response time in case of problems?", "q2-a": "We work with strict SLAs. For critical issues, support begins in minutes, either remotely or on-site.",
-    "q3-t": "Will my data be secure with you?", "q3-a": "Security is our pillar. We use encryption, redundant backups, and 24/7 monitoring to protect your business.",
-    "q4-t": "How does the contract work? Is there a lock-in?", "q4-a": "We have flexible models. Our monthly contracts aim for long-term partnership, always prioritizing transparency.",
-    "contact-title": "Let's Transform Your Business?",
-    "contact-subtitle": "Talk to a specialist and receive an initial analysis.",
-    "contact-btn": "Request Specialist Contact",
-    "tech-title": "Technology Ecosystem",
-    "footer-tag": "Information Technology Strategy."
+    "q1-t": "Will I save money hiring you?", "q1-a": "Yes. We organize your IT to avoid extra costs with equipment breakdowns and team downtime.",
+    "q2-t": "Do you serve any type of business?", "q2-a": "Yes! From offices and clinics to shops and small industries that need stable technology.",
+    "q3-t": "My internet is slow. Can you fix it?", "q3-a": "Absolutely. We do a full network review to ensure the signal reaches where you need it.",
+    "q4-t": "Is the support easy to understand?", "q4-a": "Definitely. We speak your language and explain everything simply, focusing on solving your problem.",
+    "contact-title": "Ready to leave your IT in good hands?",
+    "contact-subtitle": "Talk to us now and get a free analysis of your company.",
+    "contact-btn": "Talk to a specialist",
+    "tech-title": "Top-Tier Tech",
+    "footer-tag": "Taking care of tech so your business can grow."
   }
 };
 
