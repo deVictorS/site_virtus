@@ -1,0 +1,11 @@
+{
+  "name": "virtus-site-tests",
+  "version": "1.0.0",
+  "description": "E2E tests for Virtus Solutions Landing Page",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  },
+  "scripts": {
+    "test": "npx playwright test"
+  }
+}
