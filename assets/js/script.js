@@ -121,7 +121,7 @@ themeToggle.addEventListener("click", () => {
 });
 
 // ==========================================================================
-// LÓGICA DE TRADUÇÃO (PT/EN) - LINGUAGEM SIMPLIFICADA PARA PMEs
+// LÓGICA DE TRADUÇÃO (PT/EN)
 // ==========================================================================
 const translations = {
   pt: {
@@ -129,7 +129,7 @@ const translations = {
     "nav-about": "A Empresa",
     "nav-solutions": "O que fazemos",
     "nav-contracts": "Planos",
-    "nav-impact": "Resultados",
+    "nav-impact": "Resultados Reais",
     "nav-contact": "Contato",
     "hero-title": "Sua Empresa Livre de Problemas com Tecnologia.",
     "hero-subtitle": "Cuidamos de tudo: da sua internet ao sistema que sua empresa usa. TI organizada, rápida e com preço justo para o seu negócio crescer sem interrupções.",
@@ -147,10 +147,10 @@ const translations = {
     "c1-t": "Serviços Avulsos", "c1-d": "Ideal para resolver um problema específico ou instalar algo novo na sua empresa.",
     "c2-t": "Mensalidade de Suporte", "c2-d": "Um valor fixo por mês para ter nossa equipe cuidando de tudo, com manutenção e socorro imediato.",
     "c3-t": "Gestão Total", "c3-d": "Nós assumimos toda a responsabilidade tecnológica. Você não se preocupa com nada de TI.",
-    "impact-title": "Impacto no seu Bolso",
-    "i1-l": "Economia", "i1-t": "Redução de Gastos em até 25%", "i1-d": "Eliminamos desperdícios com equipamentos errados e manutenções desnecessárias.",
-    "i2-l": "Segurança", "i2-t": "99.9% de Estabilidade", "i2-d": "Trabalhamos para que seus computadores e sistemas nunca parem de funcionar.",
-    "i3-l": "Tempo", "i3-t": "Soluções em Minutos", "i3-d": "Nossa rapidez garante que seus funcionários não fiquem parados esperando a TI resolver.",
+    "impact-title": "Impacto Real no seu Bolso",
+    "i1-l": "Sobrevivência", "i1-t": "60% das PMEs fecham após um ataque hacker", "i1-d": "Pequenas empresas são os alvos favoritos. Sem proteção profissional, a maioria não resiste ao custo de um sequestro de dados.", "i1-s": "Fonte: National Cyber Security Alliance",
+    "i2-l": "Crescimento", "i2-t": "Empresas tech crescem 2x mais rápido", "i2-d": "PMEs que investem em modernização tecnológica e nuvem têm crescimento de receita muito superior aos concorrentes.", "i2-s": "Fonte: Boston Consulting Group (BCG)",
+    "i3-l": "Eficiência", "i3-t": "TI eficiente economiza até 30% do orçamento", "i3-d": "Uma gestão organizada de TI elimina desperdícios e paradas de trabalho, gerando economia direta no lucro da empresa.", "i3-s": "Fonte: Deloitte / SEBRAE",
     "diff-title": "Por que escolher a Virtus?",
     "d1-t": "Preço Justo", "d1-d": "Soluções profissionais com valores que cabem no orçamento de uma pequena ou média empresa.",
     "d2-t": "Tudo Organizado", "d2-d": "Você recebe relatórios claros e sabe exatamente o que está sendo feito, sem palavras difíceis.",
@@ -172,7 +172,7 @@ const translations = {
     "nav-about": "About Us",
     "nav-solutions": "What we do",
     "nav-contracts": "Plans",
-    "nav-impact": "Results",
+    "nav-impact": "Real Results",
     "nav-contact": "Contact",
     "hero-title": "Your Business Free from Tech Headaches.",
     "hero-subtitle": "We handle everything: from your internet to the systems your company uses. Organized, fast, and fairly priced IT for your business to grow smoothly.",
@@ -190,10 +190,10 @@ const translations = {
     "c1-t": "One-off Services", "c1-d": "Ideal for solving a specific problem or installing something new.",
     "c2-t": "Monthly Support", "c2-d": "A fixed monthly fee to have our team handling everything, with maintenance and immediate help.",
     "c3-t": "Total Management", "c3-d": "We take full responsibility for your tech. You don't have to worry about anything IT-related.",
-    "impact-title": "Impact on Your Budget",
-    "i1-l": "Savings", "i1-t": "Up to 25% Cost Reduction", "i1-d": "We eliminate waste on wrong equipment and unnecessary maintenance.",
-    "i2-l": "Stability", "i2-t": "99.9% Reliability", "i2-d": "We work so your computers and systems never stop working.",
-    "i3-l": "Time", "i3-t": "Solutions in Minutes", "i3-d": "Our speed ensures your staff doesn't sit idle waiting for IT to fix things.",
+    "impact-title": "Real Budget Impact",
+    "i1-l": "Survival", "i1-t": "60% of SMEs close within 6 months of a cyberattack", "i1-d": "Small businesses are top targets. Without expert protection, most can't survive the cost of a data breach.", "i1-s": "Source: National Cyber Security Alliance",
+    "i2-l": "Growth", "i2-t": "Tech-driven companies grow 2x faster", "i2-d": "SMEs that invest in tech modernization and cloud see revenue growth significantly higher than competitors.", "i2-s": "Source: Boston Consulting Group (BCG)",
+    "i3-l": "Efficiency", "i3-t": "Efficient IT saves up to 30% of your budget", "i3-d": "Organized IT management eliminates waste and work stoppages, generating direct savings.", "i3-s": "Source: Deloitte / SEBRAE",
     "diff-title": "Why choose Virtus?",
     "d1-t": "Fair Pricing", "d1-d": "Professional solutions with values that fit the budget of small and medium-sized businesses.",
     "d2-t": "Fully Organized", "d2-d": "You get clear reports and know exactly what's being done, without the jargon.",
